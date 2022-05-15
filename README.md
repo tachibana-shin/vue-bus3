@@ -5,6 +5,11 @@ A package project
 [![Build](https://github.com/tachibana-shin/vue-bus3/actions/workflows/docs.yml/badge.svg)](https://github.com/tachibana-shin/vue-bus3/actions/workflows/docs.yml)
 [![NPM](https://badge.fury.io/js/vue-bus3.svg)](http://badge.fury.io/js/vue-bus3)
 
+## Vs mitt
+- automatically cancel all events listened to at the component before the component is destroyed
+- memory saver and clear for javascript garbage collector
+- composition api support 
+
 ## Installation
 NPM / Yarn:
 ``` bash
