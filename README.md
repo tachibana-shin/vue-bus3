@@ -17,6 +17,40 @@ CDN:
 ```
 
 ## Example
+main.ts
 ``` ts
 // your example
+import { createBus } from "vue-bus3";
+
+const bus = createBus<{
+  "hide-comment": void
+}>
+
+app.use(bus);
+```
+
+App.vue
+``` ts
+import { useBus } from "vue-bus3"
+
+const bus = useBus()
+
+bus.on("hide-comment", () => {
+    console.log("hide-comment")
+})
+
+bus.emit("hide-comment")
+```
+
+### Declare event types
+
+bus.d.ts
+``` ts
+import "vue-bus3"
+
+declare module "vue-bus3" {
+    interface TypeEventsGlobal {
+        "hide-comment": void
+    }
+}
 ```

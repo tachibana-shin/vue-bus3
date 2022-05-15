@@ -5,10 +5,11 @@
     "declaration": true /* Generates corresponding '.d.ts' file. */,
     //  "outDir": "./src" /* Redirect output structure to the directory. */,
     "strict": true, /* Enable all strict type-checking options. */
-    "declarationDir": "types",
+    "declarationDir": "dist/types",
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true
   },
   "include": [
     "src"

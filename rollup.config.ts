@@ -1,20 +1,23 @@
-import commonjs from "rollup-plugin-commonjs";
-import dts from "rollup-plugin-dts";
-import esbuild from "rollup-plugin-esbuild";
-import resolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs"
+import dts from "rollup-plugin-dts"
+import esbuild from "rollup-plugin-esbuild"
+import resolve from "rollup-plugin-node-resolve"
 // import { terser } from "rollup-plugin-terser";
 
-import { name, version } from "./package.json";
+import { name, version } from "./package.json"
 
 const banner = `/**
  * This library created by Tachibana Shin <45375496+tachibana-shin@users.noreply.github.com> (c) ${new Date().getFullYear()}
  * MIT License
  * ${name} version ${version}
- * */`;
+ * */`
+
+const external = ["vue", "mitt"]
 
 const options = [
   {
     input: "src/index.ts",
+    external,
     plugins: [
       esbuild({
         // All options are optional
@@ -75,6 +78,7 @@ const options = [
   },
   {
     input: "src/index.ts",
+    external,
     plugins: [
       esbuild({
         // All options are optional
@@ -131,6 +135,7 @@ const options = [
     ],
     plugins: [dts()],
   },
-];
+]
 
-export default options;
+export default options
+
